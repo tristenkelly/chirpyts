@@ -16,9 +16,9 @@ app.use('/app', express.static('./src/app'));
 app.use(express.static("/app"));
 app.use(express.static("/assets/logo.png"));
 
-app.get("/healthz", handlerReadiness);
-app.get("/metrics", handlerMetrics);
-app.get("/reset", handlerReset);
+app.get("/api/healthz", handlerReadiness);
+app.get("/admin/metrics", handlerMetrics);
+app.get("/admin/reset", handlerReset);
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
